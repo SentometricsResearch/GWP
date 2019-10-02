@@ -1,6 +1,6 @@
 ﻿[![Build Status](https://travis-ci.org/keblu/MSGARCH.svg?branch=master)](https://travis-ci.org/keblu/MSGARCH)
- # The GWP package: Generalized Word Power in R
- 
+
+# Installation 
 ```
 library(devtools)
 install_github("keblu/GWP")
