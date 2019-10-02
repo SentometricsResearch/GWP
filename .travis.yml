@@ -1,0 +1,26 @@
+language: r
+sudo: required
+cache: packages
+
+r_packages:
+  - devtools
+
+os:
+  - linux
+
+addons:
+  apt:
+  packages:
+  - valgrind
+
+script:
+  - |
+  R CMD build .
+travis_wait 180 R CMD check --no-build-vignettes --no-manual --as-cran GWP*tar.gz
+
+r:
+  - devel
+- release
+
+after_success:
+  - cat /home/travis/build/keblu/GWP/MSGARCH.Rcheck/tests/testthat.Rout

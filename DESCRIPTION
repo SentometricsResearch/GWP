@@ -1,0 +1,18 @@
+Package: GWP
+Type: Package
+Title: Generalized Word Power Approach
+Version: 0.1
+Date: 2019-10-02
+Authors@R: person("Keven", "Bluteau", role = c("aut", "cre"),
+                  email = "Keven.Bluteau@unine.ch")
+Author: Keven Bluteau [aut, cre]
+Maintainer: Keven Bluteau <Keven.Bluteau@unine.ch>
+Description: The GWP R package: Generalized word power approach of calibrating lexicons. 
+The method is describe in in Ardia et al. (2019) <http://dx.doi.org/10.2139/ssrn.3192064>.
+License: GPL (>= 2)
+BugReports: https://github.com/keblu/GWP/issues
+URL: https://github.com/keblu/GWP
+Imports: caret, data.table, Matrix, glmnet, sentometrics, tokenizers
+Depends: R (>= 2.10)
+Suggests: testthat
+RoxygenNote: 6.1.1

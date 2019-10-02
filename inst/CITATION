@@ -1,0 +1,15 @@
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("GWP")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("Version", meta$Version)
+
+citHeader("To cite 'GWP' in publications use:")
+
+citEntry(entry = "manual",
+	 title = "The GWP package: Generalized Word Power in R",
+	 author = person("Keven","Bluteau"),
+	 url = "https://github.com/keblu/GWP",
+	 year = year,
+	 vers = vers,
+	 textVersion =
+         paste("Keven Bluteau(", year,"). ",
+               "The GWP package: Generalized Word Power in R. ", vers, ".", sep = ""))
