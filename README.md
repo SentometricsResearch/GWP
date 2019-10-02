@@ -13,6 +13,72 @@ The choice of an extraction method for the sentiment or tone of textual document
 
 The goal is to compute the predictive value of words in a written publication for explaining a variable of interest. This variable can be the accounting performance, stock return of a firm, or even the volatility of the financial market. Besides a careful selection of the relevant texts, this requires a definition of the intratextual and across–text aggregation method. Under The Generalized Word Power approach, the aggregated tone is a weighted sum of the relative frequency of the written words in selected texts for a given period. The weight or scores are calibrated to a target variables of interest.
 
+# Example
+```
+require(GWP)
+require(sentometrics)
+
+data("corpus",package = "GWP")
+sentimentWord = list_lexicons$LM_en$x
+shifterWord = list_valence_shifters$en[,c("x","y")]
+frequencies <- computeFrequencies(corpus, sentimentWord, shifterWord, clusterSize = 3)
+
+data("vix",package = "GWP")
+
+trainSize = 200
+vix_res = fitGWP(frequencies = frequencies, responseData = vix[1:trainSize,], lowerLimit = 0.2)
+
+vix_pos_score = vix_res$scores[vix_res$scores$score > 0, ]
+vix_neg_score = vix_res$scores[vix_res$scores$score < 0, ]
+
+head(vix_pos_score, n = 10)
+
+         word     score   importance
+1        able 1237.1446 0.0112956097
+2   advantage  178.3803 0.0001479612
+4       argue 2602.9026 0.0269922946
+5  attractive  270.4411 0.0007360339
+6         bad  695.0248 0.0105310248
+7  bankruptcy  328.6081 0.0015704980
+8     benefit  190.0120 0.0006114199
+11       boom  695.0205 0.0040355737
+14      break  105.8136 0.0000997360
+15     claims  777.9828 0.0097338901
+
+head(vix_neg_score, n = 10)
+
+        word      score   importance
+3    against  -157.9453 0.0023409941
+9       best  -381.4988 0.0044982427
+10    better  -263.7785 0.0025846030
+12     boost  -330.5932 0.0019790153
+13   boosted  -172.0231 0.0002451579
+20 concerned  -161.2575 0.0002092667
+26    damage  -648.9494 0.0033457575
+27   decline  -339.2800 0.0067142277
+30 declining -1264.8044 0.0169084542
+31   deficit  -414.9471 0.0234562348
+
+# OOS regression testing
+
+y_pred = predictGWP(frequencies = frequencies, model = vix_res)
+
+y_test = vix[-1:-trainSize,]
+match.id = match(y_pred$regID, y_test$regID)
+y_pred = y_pred[!is.na(match.id)]
+y_test = y_test[match.id[!is.na(match.id)],]
+
+y = y_test$y[1:nrow(y_test)]
+x = y_pred$SentimentScores[1:(nrow(y_test))]
+
+oos_reg = lm(y ~ x)
+
+plot(x, y)
+abline(oos_reg)
+```
+
+![alt text](https://github.com/keblu/GWP/blob/master/OOS_Scatterplot.png)
+
 # Reference
 
  **Ardia, D., Bluteau, K., Boudt, (2019).**  
