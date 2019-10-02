@@ -15,8 +15,8 @@ addons:
 
 script:
   - |
-  R CMD build .
-travis_wait 180 R CMD check --no-build-vignettes --no-manual --as-cran GWP*tar.gz
+    R CMD build .
+    travis_wait 180 R CMD check --no-build-vignettes --no-manual --as-cran GWP*tar.gz
 
 r:
   - devel
