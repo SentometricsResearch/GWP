@@ -1,10 +1,10 @@
 ﻿[![Build Status](https://travis-ci.org/keblu/MSGARCH.svg?branch=master)](https://travis-ci.org/keblu/MSGARCH)
  # The GWP package: Generalized Word Power in R
  
-''' 
+```
 library(devtools)
 install_github("keblu/GWP")
-'''
+```
 # What does the package do
 
 The GWP package implements the Generalized Word Power method for lexicon calibration on continuous variables as in Ardia et al. (2019). The Generalized Word Power method is a generalization of the Jegadeesh and Wu (2013) Word Power methodology. 
