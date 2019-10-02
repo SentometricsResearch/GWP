@@ -13,15 +13,15 @@ The goal is to compute the predictive value of words in a written publication fo
 
  **Ardia, D., Bluteau, K., Boudt, (2019).**  
 *Media and the Stock Market: Their Relationship and Abnormal Dynamics Around Earnings Announcements</em>.*  
-Working Paper.  
+Working Paper.   
 http://dx.doi.org/10.2139/ssrn.3192064
 
  **Jegadeesh, N. and Wu, D., (2013).**  
 *Word power: A new approach for content analysis</em>.*  
-Journal of Financial Economics, 110(3), pp.712-729. 
+Journal of Financial Economics, 110(3), pp.712-729.   
 https://doi.org/10.1016/j.jfineco.2013.08.018
 
  **Loughran, T. and McDonald, B., 2011., (2011).**  
 *When is a liability not a liability? Textual analysis, dictionaries, and 10‐Ks</em>.*  
-Journal of Finance, 66(1), pp.35-65.
+Journal of Finance, 66(1), pp.35-65.   
 https://doi.org/10.1111/j.1540-6261.2010.01625.x
