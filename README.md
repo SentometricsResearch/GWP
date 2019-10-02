@@ -35,33 +35,33 @@ vix_res = fitGWP(frequencies = frequencies, responseData = vix[1:trainSize,], lo
 vix_pos_score = vix_res$scores[vix_res$scores$score > 0, ]
 vix_neg_score = vix_res$scores[vix_res$scores$score < 0, ]
 
-head(vix_pos_score, n = 10)
+head(vix_pos_score[order(vix_pos_score$importance, decreasing = TRUE),], n = 10)
 
          word     score   importance
-1        able 1237.1446 0.0112956097
-2   advantage  178.3803 0.0001479612
-4       argue 2602.9026 0.0269922946
-5  attractive  270.4411 0.0007360339
-6         bad  695.0248 0.0105310248
-7  bankruptcy  328.6081 0.0015704980
-8     benefit  190.0120 0.0006114199
-11       boom  695.0205 0.0040355737
-14      break  105.8136 0.0000997360
-15     claims  777.9828 0.0097338901
+103     turmoil 2541.679 0.05749040
+84      serious 1329.114 0.05109177
+62      layoffs 2351.353 0.04239444
+22  corrections 1795.144 0.04000567
+23       crisis 1069.124 0.03634386
+76     problems 1312.542 0.03262211
+117       worst 1350.210 0.02996969
+4         argue 2602.903 0.02699229
+78   prosperity 2435.842 0.02684949
+79     question 1624.434 0.02670011
 
-head(vix_neg_score, n = 10)
+head(vix_neg_score[order(vix_neg_score$importance, decreasing = TRUE),], n = 10)
 
-        word      score   importance
-3    against  -157.9453 0.0023409941
-9       best  -381.4988 0.0044982427
-10    better  -263.7785 0.0025846030
-12     boost  -330.5932 0.0019790153
-13   boosted  -172.0231 0.0002451579
-20 concerned  -161.2575 0.0002092667
-26    damage  -648.9494 0.0033457575
-27   decline  -339.2800 0.0067142277
-30 declining -1264.8044 0.0169084542
-31   deficit  -414.9471 0.0234562348
+            word      score   importance
+73        popular -1403.0374 0.027765037
+49         gained  -974.5107 0.025780736
+31        deficit  -414.9471 0.023456235
+30      declining -1264.8044 0.016908454
+68           lost  -840.9247 0.015320989
+114       worries -1016.0232 0.013063305
+35  disappointing -1510.2902 0.010845441
+57       improved -1055.1569 0.007897588
+64           lose -1249.8410 0.007802614
+93       sluggish -1309.0142 0.007112272
 
 # OOS regression testing
 
