@@ -5,6 +5,10 @@
 library(devtools)
 install_github("keblu/GWP")
 ```
+
+# Disclaimer
+
+This is currently the first version of the package. Expect bugs and issues, as well as future changes.
 # What does the package do
 
 The GWP package implements the Generalized Word Power method for lexicon calibration on continuous variables as in Ardia et al. (2019). The Generalized Word Power method is a generalization of the Jegadeesh and Wu (2013) Word Power methodology. 
