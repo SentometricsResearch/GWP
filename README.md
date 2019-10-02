@@ -95,7 +95,7 @@ http://dx.doi.org/10.2139/ssrn.3192064
 Journal of Financial Economics, 110(3), pp.712-729.   
 https://doi.org/10.1016/j.jfineco.2013.08.018
 
- **Loughran, T. and McDonald, B., 2011., (2011).**  
+ **Loughran, T. and McDonald, B., (2011).**  
 *When is a liability not a liability? Textual analysis, dictionaries, and 10‐Ks</em>.*  
 Journal of Finance, 66(1), pp.35-65.   
 https://doi.org/10.1111/j.1540-6261.2010.01625.x
