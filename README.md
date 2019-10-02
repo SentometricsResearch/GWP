@@ -12,7 +12,7 @@ The goal is to compute the predictive value of words in a written publication fo
 # Reference
 
  **Ardia, D., Bluteau, K., Boudt, (2019).**  
-*	Media and the Stock Market: Their Relationship and Abnormal Dynamics Around Earnings Announcements</em>.*  
+*Media and the Stock Market: Their Relationship and Abnormal Dynamics Around Earnings Announcements</em>.*  
 Working Paper.  
 http://dx.doi.org/10.2139/ssrn.3192064
 
