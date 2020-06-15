@@ -86,7 +86,7 @@ fitGWP <- function(frequencies, responseData, alpha = c(0, 0.2, 0.4, 0.6, 0.8, 1
   names(coef) <- rownames(tmp_coef)[-1]
   
   scores <- (coef - mean(coef))/sd(coef)
-  scores <- data.frame(word = names(coef), score = coef)
+  scores <- data.frame(word = names(coef), score = scores)
   rownames(scores) <- NULL
   
   importance <- NA
