@@ -22,6 +22,7 @@ The goal is to compute the predictive value of words in a written publication fo
 require(GWP)
 require(sentometrics)
 
+set.seed(1234)
 data("corpus", package = "GWP")
 sentimentWord <- list_lexicons$LM_en$x
 shifterWord <- list_valence_shifters$en[, c("x", "y")]
@@ -38,30 +39,30 @@ vix_neg_score <- vix_res$scores[vix_res$scores$score < 0, ]
 head(vix_pos_score[order(vix_pos_score$importance, decreasing = TRUE), ], n = 10)
 
          word     score   importance
-103     turmoil 2541.679 0.05749040
-84      serious 1329.114 0.05109177
-62      layoffs 2351.353 0.04239444
-22  corrections 1795.144 0.04000567
-23       crisis 1069.124 0.03634386
-76     problems 1312.542 0.03262211
-117       worst 1350.210 0.02996969
-4         argue 2602.903 0.02699229
-78   prosperity 2435.842 0.02684949
-79     question 1624.434 0.02670011
+84      serious 1.3438446 0.06058422
+117       worst 1.7045277 0.05392553
+103     turmoil 2.1888455 0.04140686
+22  corrections 1.7389983 0.04110145
+78   prosperity 2.6576827 0.03160762
+62      layoffs 2.0040448 0.03098079
+76     problems 1.1443497 0.03085612
+23       crisis 0.8344749 0.02985422
+4         argue 2.6082979 0.02690353
+113         win 2.1320836 0.02501395
 
 head(vix_neg_score[order(vix_neg_score$importance, decreasing = TRUE), ], n = 10)
 
             word      score   importance
-73        popular -1403.0374 0.027765037
-49         gained  -974.5107 0.025780736
-31        deficit  -414.9471 0.023456235
-30      declining -1264.8044 0.016908454
-68           lost  -840.9247 0.015320989
-114       worries -1016.0232 0.013063305
-35  disappointing -1510.2902 0.010845441
-57       improved -1055.1569 0.007897588
-64           lose -1249.8410 0.007802614
-93       sluggish -1309.0142 0.007112272
+49        gained -1.5363383 0.033567095
+73       popular -1.9013067 0.029118293
+30     declining -1.9954715 0.025050171
+31       deficit -0.7756264 0.023149365
+94     stability -2.4402642 0.020659488
+35 disappointing -2.0476249 0.011179275
+68          lost -1.1161363 0.010862270
+57      improved -1.5827683 0.009501680
+97        strong -0.6844674 0.008692322
+70   opportunity -1.6583928 0.006876048
 
 # OOS regression testing
 
